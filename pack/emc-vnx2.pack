@@ -1,0 +1,6 @@
+{
+    "name": "emc-vnx2",
+    "description": "Checks for EMC VNX² storage arrays",
+    "path": "storage/",
+    "macros": {}
+}
