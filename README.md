@@ -17,27 +17,24 @@ Installation :
 
 - Install the package :
 
-            shinken install --local /path/to/emc-vnx2
+        shinken install --local /path/to/emc-vnx2
 
-- Create a monitoring user in Unisphere and the credentials in the pack-emc-vnx2/etc/resource.d/emc.cfg file
+- Create a monitoring user in Unisphere and the credentials in the [emc.cfg file](https://github.com/jlutran/pack-emc-vnx2/blob/master/etc/resource.d/emc.cfg)
 
-            $NAVISECCLIUSER$=monitoring
-            $NAVISECCLIPASSWORD$=monitoring
-
-- Edit the naviseccli path in the check_emc_vnx2.pl script if necessary
+- Edit the naviseccli path in the [check_emc_vnx2.pl script](https://github.com/jlutran/pack-emc-vnx2/blob/master/libexec/check_emc_vnx2.pl#L20) if necessary.
 
 - Create a /etc/shinken/hosts/emc-vnx2.cfg file containing at least :
 
-            define host {
-                host_name <VNX>             # VNX hostname or SID
-                address <X.X.X.X>           # SPA or SPB IP address
-                use emc-vnx2
-            }
+        define host {
+            host_name <VNX>             # VNX hostname or SID
+            address <X.X.X.X>           # SPA or SPB IP address
+            use emc-vnx2
+        }
 
 - Reload Shinken :
 
-            # service shinken reload
-            Reloading arbiter
-            Doing config check
-            . ok
-            . ok
+        # service shinken reload
+        Reloading arbiter
+        Doing config check
+        . ok
+        . ok
